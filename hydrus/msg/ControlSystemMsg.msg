@@ -1,3 +1,3 @@
-Vector 3 angular_velocity
-Vector 3 velocity
+Vector3 angular_velocity
+Vector3 velocity
 float64 fluid_pressure
