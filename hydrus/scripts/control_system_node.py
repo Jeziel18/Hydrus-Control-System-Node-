@@ -12,8 +12,8 @@ class ControlsSystemNode:
     def __init__(self):
         # This function initialize the node, message, publisher and subscriber
 
-        hydrusMsg = ControlSystemMsg()  # making the custom message an object
-        pub = rospy.Publisher('hydrus_custom_msg', ControlSystemMsg, queue_size = 10)  # publishing the new message
+        self.hydrusMsg = ControlSystemMsg()  # making the custom message an object
+        self.pub = rospy.Publisher('hydrus_custom_msg', ControlSystemMsg, queue_size = 10)  # publishing the new message
         self.angular_velocity = rospy.Subscriber('/rexrov2/imu', Imu, self.callback_angular_velocity)  # subscribing to Imu to get the angular velocity
         self.velocity = rospy.Subscriber('/rexrov2/dvl', DVL, self.callback_velocity)  # subscribing to DVL to get the velocity
         self.fluid_pressure = rospy.Subscriber('/rexrov2/fluid_pressure', FluidPressure, self.callback_fluid_pressure)  # subscribing to FluidPressure to get the fluid pressure
