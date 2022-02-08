@@ -1,3 +1,14 @@
+"""
+This implemeted a Rose node using the uuv simulator and rexriv 2.
+
+The node suubscrube to three topics to gathred specific information 
+about the topics.
+
+This information is put in a new message to publish. This way is 
+easier to see the required information.
+"""
+
+
 #!/usr/bin/env python
 import rospy
 
@@ -7,8 +18,14 @@ from sensor_msgs.msg import FluidPressure
 from hydrus.msg import ControlSystemMsg
 
 class ControlsSystemNode:
-    # This class is to create the node and make the Subscriptions and Publishing the message
+    """
+    This class created the node and implemented the subscribe and publish functions.
 
+    First is necesarry to subscribe to the required topics to get the information.
+    This information is gathered and put in a new custom message.
+
+    Afert this the new message is created and Publish.
+    """
     def __init__(self):
         # This function initialize the node, message, publisher and subscriber
 
